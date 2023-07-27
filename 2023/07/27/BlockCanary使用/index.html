@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/cute_icon.png">
+  <link rel="icon" href="/img/cute_icon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="lier">
+  <meta name="keywords" content="">
+  
+  <title>BlockCanary使用 - Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>lier的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/background.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="BlockCanary使用">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-07-27 10:34" pubdate>
+        2023年7月27日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      17
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">BlockCanary使用</h1>
+            
+            <div class="markdown-body">
+              <h3 id="BlockCanary使用详解"><a href="#BlockCanary使用详解" class="headerlink" title="BlockCanary使用详解"></a>BlockCanary使用详解</h3><h4 id="1-作用"><a href="#1-作用" class="headerlink" title="1.作用"></a>1.作用</h4><p> 用于检测主线程中各种卡慢的问题，会记录发生卡顿的各种信息，输出到指定的配置文件</p>
+<h4 id="2-如何使用"><a href="#2-如何使用" class="headerlink" title="2.如何使用"></a>2.如何使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//引入依赖</span><br>implementation <span class="hljs-string">&#x27;com.github.markzhai:blockcanary-android:1.5.0&#x27;</span><br><br>YML<br><span class="hljs-comment">//创建实现类，自定义上下文参数配置</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyBlockCanaryContext</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">BlockCanaryContext</span> &#123;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">provideBlockThreshold</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">//配置block阈值，在此持续时间内的dispatch被视为BLOCK。您可以根据设备的性能进行设		  //置，单位为毫秒</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-number">500</span>;<br>    &#125;<br><br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onBlock</span><span class="hljs-params">(Context context, BlockInfo blockInfo)</span> &#123;<br>        <span class="hljs-comment">//Block拦截器，开发者可以提供自己的动作</span><br>        Toast.makeText(context, <span class="hljs-string">&quot;UI阻塞了，耗时：&quot;</span> + blockInfo.timeCost, 		Toast.LENGTH_SHORT).show();<br>        Log.i(<span class="hljs-string">&quot;bqt&quot;</span>, <span class="hljs-string">&quot;【UI阻塞了】耗时：&quot;</span> + blockInfo.timeCost + <span class="hljs-string">&quot;\n&quot;</span> + blockInfo.toString());<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">providePath</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">//日志文件保存地址，每监测到一次卡顿都将在SD卡上保存一个单独的日志文件</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;/blockcanary/&quot;</span>; <br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">displayNotification</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">//设为true时，当监测到卡顿后会在通知栏提醒</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>; <br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">stopWhenDebugging</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">//是否在debug模式是关闭，如果关闭则返回true</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>; <br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">provideDumpInterval</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">//线程 stack dump 间隔，当block发生时使用，BlockCanary将根据当前采样周期在主线程		   //堆栈上dump</span><br>        <span class="hljs-comment">//因为Looper的实现机制，实际dump间隔会比这里指定的长，特别是当cpu比较繁忙时</span><br>        <span class="hljs-keyword">return</span> provideBlockThreshold(); <br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">provideMonitorDuration</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">//配置Monitor持续的时间，过了这个时间以后BlockCanary就会停止，单位是小时，-1表示         //不会停止</span><br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>; <br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">zip</span><span class="hljs-params">(File[] src, File dest)</span> &#123;<br>        <span class="hljs-comment">//参数为压缩前的文件列表和压缩后的文件，返回 true 代表压缩成功</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; <br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">upload</span><span class="hljs-params">(File zippedFile)</span> &#123;<br>        <span class="hljs-comment">//用以将压缩后的日志文件上传到服务器，zip返回true才会调用</span><br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UnsupportedOperationException</span>(); <br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> List&lt;String&gt; <span class="hljs-title function_">concernPackages</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">//开发者所关心的包，默认情况下使用进程名称，如果只关心 package with process             //name，则返回null</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>; <br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">filterNonConcernStack</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">//过滤掉那些没有任何包存在于 concernPackages() 方法所指定的包中的 stack。如果开         //启过滤返回true</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; <br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> List&lt;String&gt; <span class="hljs-title function_">provideWhiteList</span><span class="hljs-params">()</span> &#123;<br>        LinkedList&lt;String&gt; whiteList = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br>        whiteList.add(<span class="hljs-string">&quot;org.chromium&quot;</span>);<br>        <span class="hljs-comment">//提供白名单，白名单中的条目不会显示在ui列表中。z，则返回null</span><br>        <span class="hljs-keyword">return</span> whiteList; <br>        <span class="hljs-comment">//注意，经过测试发现此库有一个bug，如果这里返回null，当点击通知栏或点击桌面上				的&quot;Blocks&quot;时，应用就会崩溃！</span><br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">deleteFilesInWhiteList</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">//与白名单一起使用，是否删除那些其stack存在于白名单中的文件。如果删除则返回true</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>; <br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">provideQualifier</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">//指定限定符，例如version + flavor</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;unknown&quot;</span>; <br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">provideUid</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;uid&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">provideNetworkType</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">//网络类型，2G, 3G, 4G, wifi, etc.</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;unknown&quot;</span>; <br>    &#125;<br>&#125;<br><br>JAVA<br><span class="hljs-comment">//layout</span><br>&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;<br>&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span><br>    xmlns:app=<span class="hljs-string">&quot;http://schemas.android.com/apk/res-auto&quot;</span><br>    xmlns:tools=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span><br>    android:layout_width=<span class="hljs-string">&quot;match_parent&quot;</span><br>    android:layout_height=<span class="hljs-string">&quot;match_parent&quot;</span><br>    tools:context=<span class="hljs-string">&quot;.MainActivity&quot;</span>&gt;<br><br>    &lt;Button<br>        android:id=<span class="hljs-string">&quot;@+id/blockCanary&quot;</span><br>        android:layout_width=<span class="hljs-string">&quot;wrap_content&quot;</span><br>        android:layout_height=<span class="hljs-string">&quot;wrap_content&quot;</span><br>        android:text=<span class="hljs-string">&quot;BlockCanary卡顿检测&quot;</span><br>        app:layout_constraintTop_toTopOf=<span class="hljs-string">&quot;parent&quot;</span> /&gt;<br><br>&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;<br><br>XML<br><span class="hljs-comment">//MainActivity</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppCompatActivity</span> &#123;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> &#123;<br>        <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);<br>        setContentView(R.layout.activity_main);<br><br>        <span class="hljs-comment">//模拟APP卡顿</span><br>        findViewById(R.id.blockCanary).setOnClickListener(view -&gt; SystemClock.sleep(<span class="hljs-number">500</span>));<br><br>        <span class="hljs-comment">//初始化blockCanary</span><br>        BlockCanary.install(<span class="hljs-built_in">this</span>,<span class="hljs-keyword">new</span> <span class="hljs-title class_">MyBlockCanaryContext</span>()).start();<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p><strong>运行结果</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs java">D/CompatibilityChangeReporter: Compat change id reported: <span class="hljs-number">147798919</span>; UID <span class="hljs-number">10135</span>; state: DISABLED<br>I/bqt: 【UI阻塞了】耗时：<span class="hljs-number">503</span><br>    qua = <span class="hljs-type">unknown</span><br>    <span class="hljs-variable">versionName</span> <span class="hljs-operator">=</span> <span class="hljs-number">1.0</span><br>    versionCode = <span class="hljs-number">1</span><br>    imei = <span class="hljs-type">empty_imei</span><br>    <span class="hljs-variable">uid</span> <span class="hljs-operator">=</span> <span class="hljs-type">uid</span><br>    <span class="hljs-variable">network</span> <span class="hljs-operator">=</span> <span class="hljs-type">unknown</span><br>    <span class="hljs-variable">model</span> <span class="hljs-operator">=</span> Android SDK built <span class="hljs-keyword">for</span> x86<br>    api-level = <span class="hljs-number">30</span> <span class="hljs-number">11</span><br>    cpu-core = <span class="hljs-number">4</span><br>    process = com.lier.<span class="hljs-type">blockcanary</span><br>    <span class="hljs-variable">freeMemory</span> <span class="hljs-operator">=</span> <span class="hljs-number">1279360</span><br>    totalMemory = <span class="hljs-number">2028196</span><br>    time = <span class="hljs-number">503</span><br>    thread-time = <span class="hljs-number">2</span><br>    time-start = <span class="hljs-number">07</span>-<span class="hljs-number">24</span> <span class="hljs-number">06</span>:<span class="hljs-number">54</span>:<span class="hljs-number">40.795</span><br>    time-end = <span class="hljs-number">07</span>-<span class="hljs-number">24</span> <span class="hljs-number">06</span>:<span class="hljs-number">54</span>:<span class="hljs-number">41.298</span><br>    cpu-busy = <span class="hljs-literal">false</span><br>    cpu-rate = <br>    stack = <span class="hljs-number">07</span>-<span class="hljs-number">24</span> <span class="hljs-number">06</span>:<span class="hljs-number">54</span>:<span class="hljs-number">41.197</span><br>    <br>    java.lang.Thread.sleep(Native Method)<br>    java.lang.Thread.sleep(Thread.java:<span class="hljs-number">442</span>)<br>    java.lang.Thread.sleep(Thread.java:<span class="hljs-number">358</span>)<br>    android.os.SystemClock.sleep(SystemClock.java:<span class="hljs-number">131</span>)<br>    com.lier.blockcanary.MainActivity.lambda$onCreate$<span class="hljs-number">0</span>(MainActivity.java:<span class="hljs-number">18</span>)<br>    com.lier.blockcanary.-$$Lambda$MainActivity$EX4BSoI9N52tcQrEKo7P4196M6s.onClick(Unknown Source:<span class="hljs-number">0</span>)<br>    android.view.View.performClick(View.java:<span class="hljs-number">7448</span>)<br>    com.google.android.material.button.MaterialButton.performClick(MaterialButton.java:<span class="hljs-number">992</span>)<br>    android.view.View.performClickInternal(View.java:<span class="hljs-number">7425</span>)<br>    android.view.View.access$<span class="hljs-number">3600</span>(View.java:<span class="hljs-number">810</span>)<br>    android.view.View$PerformClick.run(View.java:<span class="hljs-number">28305</span>)<br>    android.os.Handler.handleCallback(Handler.java:<span class="hljs-number">938</span>)<br>    android.os.Handler.dispatchMessage(Handler.java:<span class="hljs-number">99</span>)<br>    android.os.Looper.loop(Looper.java:<span class="hljs-number">223</span>)<br>    android.app.ActivityThread.main(ActivityThread.java:<span class="hljs-number">7656</span>)<br>    java.lang.reflect.Method.invoke(Native Method)<br>    com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:<span class="hljs-number">592</span>)<br>    com.android.internal.os.ZygoteInit.main(ZygoteInit.java:<span class="hljs-number">947</span>)<br></code></pre></td></tr></table></figure>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Android/">Android</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/27/shell%E7%BC%96%E7%A8%8B/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">shell编程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <i class="iconfont icon-love"></i>lier 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

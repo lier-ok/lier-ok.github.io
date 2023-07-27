@@ -1,0 +1,494 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/cute_icon.png">
+  <link rel="icon" href="/img/cute_icon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="lier">
+  <meta name="keywords" content="">
+  
+  <title>CICD - Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>lier的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/background.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="CICD">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-07-27 11:07" pubdate>
+        2023年7月27日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      698 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      10
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">CICD</h1>
+            
+            <div class="markdown-body">
+              <h2 id="CI-CD持续集成部署"><a href="#CI-CD持续集成部署" class="headerlink" title="CI&#x2F;CD持续集成部署"></a>CI&#x2F;CD持续集成部署</h2><h3 id="1-什么是CI-CD"><a href="#1-什么是CI-CD" class="headerlink" title="1.什么是CI&#x2F;CD"></a>1.什么是CI&#x2F;CD</h3><p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202209291022451.png"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202209291022451.png" srcset="/img/loading.gif" lazyload alt="20210319113044888"></a></p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202209291023602.png"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202209291023602.png" srcset="/img/loading.gif" lazyload alt="20210319113116891"></a></p>
+<h3 id="2-搭建gitLab仓库"><a href="#2-搭建gitLab仓库" class="headerlink" title="2.搭建gitLab仓库"></a>2.搭建gitLab仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs SHELL"><span class="hljs-meta prompt_">#</span><span class="language-bash">1.创建目录</span><br>/home/gitlab/config<br>/home/gitlab/logs<br>/home/gitlab/data<br><span class="hljs-meta prompt_">#</span><span class="language-bash">2.启动容器后,将对应文件复制到挂在目录下,删除容器</span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">3.创建启动容器</span><br>sudo docker run --detach \<br>  --hostname 10.3.0.88 \<br>  --publish 9001:80 \<br>  --name gitlab \<br>  --restart always \<br>  --volume /home/gitlab/config:/etc/gitlab \<br>  --volume /home/gitlab/logs:/var/log/gitlab \<br>  --volume /home/gitlab/data:/var/opt/gitlab \<br>  gitlab/gitlab-ce:latest<br><span class="hljs-meta prompt_">#</span><span class="language-bash">4.进入容器,充值root用户密码</span><br>user = User.where(id: 1).first<br>user.password=&#x27;rootroot&#x27;<br>user.password_confirmation=&#x27;rootroot&#x27;<br>user.save!<br><span class="hljs-meta prompt_">#</span><span class="language-bash">5.登录</span><br><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-搭建docker镜像仓库"><a href="#3-搭建docker镜像仓库" class="headerlink" title="3.搭建docker镜像仓库"></a>3.搭建docker镜像仓库</h3><h4 id="3-1下载tgz文件"><a href="#3-1下载tgz文件" class="headerlink" title="3.1下载tgz文件"></a>3.1<strong>下载tgz文件</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs SHELL">wget https://github.com/goharbor/harbor/releases/download/v2.2.0/harbor-offline-installer-v2.2.0.tgz<br><br><br></code></pre></td></tr></table></figure>
+
+<h4 id="3-2解压"><a href="#3-2解压" class="headerlink" title="3.2解压"></a>3.2<strong>解压</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs SHELL">tar -zxvf harbor-offline-installer-v2.2.0.tgz<br><br><br></code></pre></td></tr></table></figure>
+
+<h4 id="3-3修改配置文件"><a href="#3-3修改配置文件" class="headerlink" title="3.3修改配置文件"></a>3.3<strong>修改配置文件</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs SHELL"><span class="hljs-meta prompt_">#</span><span class="language-bash">打开配置文件</span><br>cd harbor<br>cp harbor.yml.tmpl harbor.yml<br>vim harbor.yml<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">修改如下即可</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">注释掉https相关,使用http访问</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">https related config</span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">https:</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">https port <span class="hljs-keyword">for</span> harbor, default is 443</span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">port: 443</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">The path of cert and key files <span class="hljs-keyword">for</span> nginx</span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">certificate: /your/certificate/path</span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">private_key: /your/private/key/path</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">访问ip</span><br>hostname: $&#123;ip&#125;<br><span class="hljs-meta prompt_"># </span><span class="language-bash">启动端口</span><br>http:<br><span class="hljs-meta prompt_"># </span><span class="language-bash">port <span class="hljs-keyword">for</span> http, default is 80. If https enabled, this port will redirect to https port</span><br> port: $&#123;port&#125;<br><span class="hljs-meta prompt_"># </span><span class="language-bash">amdin账户密码</span><br>harbor_admin_password: $&#123;password&#125;<br><br><br></code></pre></td></tr></table></figure>
+
+<h4 id="3-4启动运行"><a href="#3-4启动运行" class="headerlink" title="3.4启动运行"></a>3.4<strong>启动运行</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs SHELL">cd harbor<br>./prepare<br>./install.sh<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">后续启动运行</span><br>docker-compose down<br>docker-compose up -d<br><br><br>问题: 登录时核心服务不可用<br>删除redis的持久化文件dump即可<br><br><br></code></pre></td></tr></table></figure>
+
+<h4 id="3-5设置向私有仓库中提交镜像"><a href="#3-5设置向私有仓库中提交镜像" class="headerlink" title="3.5设置向私有仓库中提交镜像"></a>3.5<strong>设置向私有仓库中提交镜像</strong></h4><p> 1.修改daemon.json文件，加入镜像仓库地址端口</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs JSON"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;insecure-registries&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;ip&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br><span class="hljs-punctuation">&#125;</span><br><br><br></code></pre></td></tr></table></figure>
+
+<p> 2.测试镜像下拉和提交</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs SHELL"><span class="hljs-meta prompt_">#</span><span class="language-bash">登录harbor</span><br>docker login ip:port<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">构建镜像 镜像格式：ip/项目名/镜像名/版本tag</span><br>docker build -t 10.3.0.88/cicd/cicd/1.0<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">上传镜像</span><br>docker push 10.3.0.88/cicd/cicd/1.0<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">下拉镜像</span><br>docker pull 10.3.0.88/cicd/cicd/1.0<br><br><br></code></pre></td></tr></table></figure>
+
+<p> 3.镜像仓库如图：</p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071049013.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071049013.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221007104753"></a></p>
+<h3 id="4-搭建jekins"><a href="#4-搭建jekins" class="headerlink" title="4: 搭建jekins"></a>4: 搭建jekins</h3><h4 id="4-1：jekins安装"><a href="#4-1：jekins安装" class="headerlink" title="4.1：jekins安装"></a>4.1：jekins安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs SHELL"><span class="hljs-meta prompt_">#</span><span class="language-bash">拉取镜像</span><br>docker pull jenkinsci/blueocean<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">运行</span><br>docker run -itd -u root -p 8080:8080 -p 50000:50000 -v v1:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock --name=jenkins  jenkinsci/blueocean<br><br><br><br></code></pre></td></tr></table></figure>
+
+<p> 进入jekins如图</p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071334225.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071334225.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221007133201"></a></p>
+<p> 获取密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs SHELL"><span class="hljs-meta prompt_"># </span><span class="language-bash">查看jenkins密码</span><br>docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword<br><br><br></code></pre></td></tr></table></figure>
+
+<h4 id="4-2-安装插件"><a href="#4-2-安装插件" class="headerlink" title="4.2: 安装插件"></a>4.2: 安装插件</h4><p> 系统管理—&gt; 插件管理 —-&gt; 可选插件，搜索Publish Over SSH</p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071441860.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071441860.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221007143300"></a></p>
+<h4 id="4-3-配置服务器信息"><a href="#4-3-配置服务器信息" class="headerlink" title="4.3:配置服务器信息"></a>4.3:配置服务器信息</h4><p> 系统管理—&gt; 系统配置—&gt; 登录</p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071556749.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071556749.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221007155611"></a></p>
+<p>Dingtalk_20221007155611</p>
+<h3 id="5-实现CI-CD"><a href="#5-实现CI-CD" class="headerlink" title="5: 实现CI&#x2F;CD"></a>5: 实现CI&#x2F;CD</h3><h4 id="5-1-新建任务"><a href="#5-1-新建任务" class="headerlink" title="5.1: 新建任务"></a>5.1: 新建任务</h4><p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071751906.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071751906.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221007160529"></a></p>
+<h4 id="5-2-配置任务"><a href="#5-2-配置任务" class="headerlink" title="5.2: 配置任务"></a>5.2: 配置任务</h4><p> 配置仓库地址，已经git账户<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071752318.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071752318.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221007172802"></a></p>
+<p>Dingtalk_20221007172802</p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071753867.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071753867.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221007172833"></a></p>
+<p> 配置触发器</p>
+<p> 如果没有该选项，安装gitLab插件即可</p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071754064.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071754064.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221007174919"></a> <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071755401.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210071755401.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221007174947"></a></p>
+<h4 id="5-3-配置webHooks"><a href="#5-3-配置webHooks" class="headerlink" title="5.3: 配置webHooks"></a>5.3: 配置webHooks</h4><p> <strong>1：设置jekins的全局安全配置 系统管理—&gt; 系统全局安全配置</strong></p>
+<p> <strong>2. 勾选图中选项</strong></p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210081501467.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210081501467.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221008103416"></a></p>
+<p>Dingtalk_20221008103416</p>
+<p><strong>3.去除图中勾选</strong></p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210081502716.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210081502716.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221008145841"></a></p>
+<p> <strong>4.在gitLab仓库配置webHooks 设置 —&gt; webHooks</strong><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210081504386.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210081504386.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221008150347"></a></p>
+<p>Dingtalk_20221008150347</p>
+<p> <em><strong>注意：</strong></em>其中网址(url)和secret令牌必须与jekins构建任务时一致，如下图</p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210081509474.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210081509474.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221008145909"></a></p>
+<p>Dingtalk_20221008145909</p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210081510453.jpg"><img src="https://cdn.jsdelivr.net/gh/lier-ok/typora_pic@main/img/202210081510453.jpg" srcset="/img/loading.gif" lazyload alt="Dingtalk_20221008150627"></a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%9B%86%E6%88%90%E9%83%A8%E7%BD%B2/">集成部署</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/27/android%E7%AC%94%E8%AE%B0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">android笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/27/Docker/">
+                        <span class="hidden-mobile">Docker</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <i class="iconfont icon-love"></i>lier 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
