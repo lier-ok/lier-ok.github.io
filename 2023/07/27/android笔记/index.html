@@ -18,7 +18,7 @@
   <meta name="author" content="lier">
   <meta name="keywords" content="">
   
-  <title>android笔记 - Blog</title>
+  <title>Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="android笔记">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      10.6k 字
+      11.4k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      146
+      157
        分钟
     </span>
   
@@ -225,7 +225,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">android笔记</h1>
+            <h1 style="display: none"></h1>
             
             <div class="markdown-body">
               <h1 id="Android开发"><a href="#Android开发" class="headerlink" title="Android开发"></a>Android开发</h1><h3 id="1：架构说明"><a href="#1：架构说明" class="headerlink" title="1：架构说明"></a>1：架构说明</h3><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/static/guide/platform/images/android-stack_2x.png?hl=zh-cn"><img src="https://developer.android.google.cn/static/guide/platform/images/android-stack_2x.png?hl=zh-cn" srcset="/img/loading.gif" lazyload alt="Snipaste_2023-06-27_14-52-08"></a></p>
@@ -381,9 +381,38 @@
 <p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/lier-ok/typora_pic/main/img/QQ%E6%88%AA%E5%9B%BE20230707155032.png"><img src="https://raw.githubusercontent.com/lier-ok/typora_pic/main/img/QQ%E6%88%AA%E5%9B%BE20230707155032.png" srcset="/img/loading.gif" lazyload alt="QQ截图20230707155032"></a></p>
 <p>最终实现效果，点击按钮实现切换不同的fragment</p>
 <p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/lier-ok/typora_pic/main/img/test.gif"><img src="https://raw.githubusercontent.com/lier-ok/typora_pic/main/img/test.gif" srcset="/img/loading.gif" lazyload alt="test"></a></p>
-<h4 id="3-4：Fragment通信"><a href="#3-4：Fragment通信" class="headerlink" title="3.4：Fragment通信"></a>3.4：Fragment通信</h4><h5 id="3-4-1：两个Fragment之间直接通信"><a href="#3-4-1：两个Fragment之间直接通信" class="headerlink" title="3.4.1：两个Fragment之间直接通信"></a>3.4.1：两个Fragment之间<strong>直接通信</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-comment">//添加时指定对应Fragment的tag</span><br><span class="hljs-type">Fragment</span> <span class="hljs-variable">f1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Fragment1</span>();<br><span class="hljs-type">Fragment2</span> <span class="hljs-variable">f2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Fragment2</span>();<br><span class="hljs-comment">//指定具体fragment的tag,后续可以使用findFragmentByTag找到指定的fragment</span><br>transaction.add(f1,<span class="hljs-string">&quot;f1&quot;</span>);<br>transaction.add(f2,<span class="hljs-string">&quot;f2&quot;</span>);<br><br><span class="hljs-comment">//在其他的Fragment中使用findFragmentByTag(String tag)方法获取的指定的Fragment进行通信</span><br><span class="hljs-type">RightFragment</span> <span class="hljs-variable">rightFragment</span> <span class="hljs-operator">=</span> (RightFragment) <span class="hljs-built_in">this</span>.getActivity().getSupportFragmentManager().findFragmentByTag(<span class="hljs-string">&quot;right&quot;</span>);<br><br><br></code></pre></td></tr></table></figure>
+<h4 id="3-4：Fragment通信"><a href="#3-4：Fragment通信" class="headerlink" title="3.4：Fragment通信"></a>3.4：Fragment通信</h4><h5 id="3-4-1：使用activity通信"><a href="#3-4-1：使用activity通信" class="headerlink" title="3.4.1：使用activity通信"></a>3.4.1：使用activity通信</h5><ul>
+<li>在Fragment中，可以通过<code>getActivity()</code>方法获取关联的Activity实例，然后调用Activity的公共方法来进行通信。</li>
+<li>在Activity中，可以定义接口或回调方法，并在Fragment中实现接口或传递回调对象，在需要通信的地方调用相应的方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-comment">//添加时指定对应Fragment的tag</span><br><span class="hljs-type">Fragment</span> <span class="hljs-variable">f1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Fragment1</span>();<br><span class="hljs-type">Fragment2</span> <span class="hljs-variable">f2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Fragment2</span>();<br><span class="hljs-comment">//指定具体fragment的tag,后续可以使用findFragmentByTag找到指定的fragment</span><br>transaction.add(f1,<span class="hljs-string">&quot;f1&quot;</span>);<br>transaction.add(f2,<span class="hljs-string">&quot;f2&quot;</span>);<br><br><span class="hljs-comment">//在其他的Fragment中使用findFragmentByTag(String tag)方法获取的指定的Fragment进行通信</span><br><span class="hljs-type">RightFragment</span> <span class="hljs-variable">rightFragment</span> <span class="hljs-operator">=</span> (RightFragment) <span class="hljs-built_in">this</span>.getActivity().getSupportFragmentManager().findFragmentByTag(<span class="hljs-string">&quot;right&quot;</span>);<br><br><br></code></pre></td></tr></table></figure>
 
-<h5 id="3-4-2：接口回调通信"><a href="#3-4-2：接口回调通信" class="headerlink" title="3.4.2：接口回调通信"></a>3.4.2：接口回调通信</h5><h3 id="4：service详解"><a href="#4：service详解" class="headerlink" title="4：service详解"></a>4：service详解</h3><h4 id="4-1：基本介绍"><a href="#4-1：基本介绍" class="headerlink" title="4.1：基本介绍"></a>4.1：基本介绍</h4><p> service为安卓的四大组件之一，是一个没有用户界面可以在后台无限期运行的组件</p>
+<h5 id="3-4-2：Bundle通信"><a href="#3-4-2：Bundle通信" class="headerlink" title="3.4.2：Bundle通信"></a>3.4.2：Bundle通信</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FragmentA</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Fragment</span> &#123;<br><br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sendDataToFragmentB</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">data</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Hello Fragment B!&quot;</span>;<br>        <br>        <span class="hljs-comment">// 创建Bundle对象</span><br>        <span class="hljs-type">Bundle</span> <span class="hljs-variable">bundle</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Bundle</span>();<br>        <br>        <span class="hljs-comment">// 将数据放入Bundle中</span><br>        bundle.putString(<span class="hljs-string">&quot;data&quot;</span>, data);<br>        <br>        <span class="hljs-comment">// 获取FragmentManager，并开启一个事务</span><br>        <span class="hljs-type">FragmentManager</span> <span class="hljs-variable">fragmentManager</span> <span class="hljs-operator">=</span> getParentFragmentManager();<br>        <span class="hljs-type">FragmentTransaction</span> <span class="hljs-variable">fragmentTransaction</span> <span class="hljs-operator">=</span> 			     fragmentManager.beginTransaction();<br>        <br>        <span class="hljs-comment">// 创建FragmentB实例</span><br>        <span class="hljs-type">FragmentB</span> <span class="hljs-variable">fragmentB</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FragmentB</span>();<br>     <br>        <span class="hljs-comment">// 将Bundle对象传递给FragmentB</span><br>        fragmentB.setArguments(bundle);<br><br>        <span class="hljs-comment">// 替换当前的Fragment为FragmentB</span><br>        fragmentTransaction.replace(R.id.fragment_container, fragmentB);<br>        <br>        <span class="hljs-comment">// 提交事务</span><br>        fragmentTransaction.commit();<br>    &#125;<br><br>    <span class="hljs-comment">// ... 省略其他代码 ...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FragmentB</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Fragment</span> &#123;<br><br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> View <span class="hljs-title function_">onCreateView</span><span class="hljs-params">(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</span> &#123;<br>        <span class="hljs-type">View</span> <span class="hljs-variable">view</span> <span class="hljs-operator">=</span> inflater.inflate(R.layout.fragment_b, container, <span class="hljs-literal">false</span>);<br><br>        <span class="hljs-comment">// 获取传递过来的Bundle</span><br>        <span class="hljs-type">Bundle</span> <span class="hljs-variable">bundle</span> <span class="hljs-operator">=</span> getArguments();<br><br>        <span class="hljs-keyword">if</span> (bundle != <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-comment">// 从Bundle中取出数据</span><br>            <span class="hljs-type">String</span> <span class="hljs-variable">data</span> <span class="hljs-operator">=</span> bundle.getString(<span class="hljs-string">&quot;data&quot;</span>);<br><br>            <span class="hljs-comment">// 在这里展示数据</span><br>            <span class="hljs-comment">// 例如，将数据设置给TextView</span><br>            <span class="hljs-type">TextView</span> <span class="hljs-variable">textView</span> <span class="hljs-operator">=</span> view.findViewById(R.id.text_view);<br>            textView.setText(data);<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> view;<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h5 id="3-4-3：EventBus通信"><a href="#3-4-3：EventBus通信" class="headerlink" title="3.4.3：EventBus通信"></a>3.4.3：EventBus通信</h5><p>EventBus是一个开源的Android事件总线库，它简化了组件之间的通信。EventBus使用观察者模式，组件可以发布事件，同时其他组件也可以订阅和接收这些事件</p>
+<p>​	<strong>使用步骤：</strong></p>
+<p>​	1：引入依赖</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs clean">dependencies &#123;<br>    <span class="hljs-keyword">implementation</span> <span class="hljs-string">&#x27;org.greenrobot:eventbus:3.2.0&#x27;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​	2：创建事件类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MessageEvent</span> &#123;<br>    <span class="hljs-keyword">private</span> String message;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">MessageEvent</span><span class="hljs-params">(String message)</span> &#123;<br>        <span class="hljs-built_in">this</span>.message = message;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getMessage</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> message;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​	3：注册和取消注册</p>
+<p>在每个需要接收事件的组件中，都需要在合适的生命周期方法中注册和取消注册EventBus</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onStart</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-built_in">super</span>.onStart();<br>    EventBus.getDefault().register(<span class="hljs-built_in">this</span>);<br>&#125;<br><br><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onStop</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-built_in">super</span>.onStop();<br>    EventBus.getDefault().unregister(<span class="hljs-built_in">this</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​	4：发消息</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">String message = <span class="hljs-string">&quot;Hello EventBus!&quot;</span>;<br><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">EventBus</span>.</span></span>get<span class="hljs-constructor">Default()</span>.post(<span class="hljs-keyword">new</span> <span class="hljs-constructor">MessageEvent(<span class="hljs-params">message</span>)</span>);<br></code></pre></td></tr></table></figure>
+
+<p>​	5：接受消息</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Subscribe</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onMessageEvent</span><span class="hljs-params">(MessageEvent event)</span> &#123;<br>    <span class="hljs-type">String</span> <span class="hljs-variable">message</span> <span class="hljs-operator">=</span> event.getMessage();<br>    <span class="hljs-comment">// 处理接收到的消息</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>后续可以使用广播Boardcast通信</p>
+<h3 id="4：service详解"><a href="#4：service详解" class="headerlink" title="4：service详解"></a>4：service详解</h3><h4 id="4-1：基本介绍"><a href="#4-1：基本介绍" class="headerlink" title="4.1：基本介绍"></a>4.1：基本介绍</h4><p> service为安卓的四大组件之一，是一个没有用户界面可以在后台无限期运行的组件</p>
 <h4 id="4-2：启动方式"><a href="#4-2：启动方式" class="headerlink" title="4.2：启动方式"></a>4.2：启动方式</h4><h5 id="4-2-1：startService"><a href="#4-2-1：startService" class="headerlink" title="4.2.1：startService"></a>4.2.1：startService</h5><p> 通过该方式启动Service，访问者与Service之间没有关联，即使访问者退出了，Service也仍然运行</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-comment">//启动服务</span><br><span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(Activity.<span class="hljs-built_in">this</span>,Service.class)<br>startService(intent)<br><br><span class="hljs-comment">//停止服务</span><br>stopService(intent)<br><br><br></code></pre></td></tr></table></figure>
 
@@ -551,7 +580,7 @@
 
 <h5 id="7-4-5-最终效果"><a href="#7-4-5-最终效果" class="headerlink" title="7.4.5.最终效果"></a>7.4.5.最终效果</h5><p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/lier-ok/typora_pic/main/img/071214402071_0Snipaste_2023-07-12_14-39-05.png"><img src="https://raw.githubusercontent.com/lier-ok/typora_pic/main/img/071214402071_0Snipaste_2023-07-12_14-39-05.png" srcset="/img/loading.gif" lazyload alt="071214402071_0Snipaste_2023-07-12_14-39-05"></a></p>
 <p>071214402071_0Snipaste_2023-07-12_14-39-05</p>
-<h3 id="8：View与ViewGroup"><a href="#8：View与ViewGroup" class="headerlink" title="8：View与ViewGroup"></a>8：View与ViewGroup</h3><p> <strong>所有的用户界面元素都是由View和ViewGroup的对象构成的。View是绘制在屏幕上的用户能与之交互的一个对象。而ViewGroup则是一个用于存放其他View（和ViewGroup）对象的布局容器</strong>！ Android为我们提供了一个View和ViewGroup子类的集合，集合中提供了一些常用的输入控件(比如按钮和文本域)和各种各样的布局模式（比如线性或相对布局）</p>
+<h3 id="8：View"><a href="#8：View" class="headerlink" title="8：View"></a>8：View</h3><p> <strong>所有的用户界面元素都是由View和ViewGroup的对象构成的。View是绘制在屏幕上的用户能与之交互的一个对象。而ViewGroup则是一个用于存放其他View（和ViewGroup）对象的布局容器</strong>！ Android为我们提供了一个View和ViewGroup子类的集合，集合中提供了一些常用的输入控件(比如按钮和文本域)和各种各样的布局模式（比如线性或相对布局）</p>
 <p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/lier-ok/typora_pic/main/img/68789093.jpg"><img src="https://raw.githubusercontent.com/lier-ok/typora_pic/main/img/68789093.jpg" srcset="/img/loading.gif" lazyload alt="img"></a></p>
 <h4 id="8-1：UI组件"><a href="#8-1：UI组件" class="headerlink" title="8.1：UI组件"></a>8.1：UI组件</h4><p>View组件包含了几乎所有的图形显示组件</p>
 <p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/lier-ok/typora_pic/main/img/2019040820130691.png"><img src="https://raw.githubusercontent.com/lier-ok/typora_pic/main/img/2019040820130691.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
@@ -661,6 +690,55 @@
 
 <p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/lier-ok/typora_pic/main/img/D07C612B-0DB8-4775-8045-9318F73C0B13.jpeg"><img src="https://raw.githubusercontent.com/lier-ok/typora_pic/main/img/D07C612B-0DB8-4775-8045-9318F73C0B13.jpeg" srcset="/img/loading.gif" lazyload alt="img"></a></p>
 <h5 id="8-2-6：AbsoluteLayout绝对布局"><a href="#8-2-6：AbsoluteLayout绝对布局" class="headerlink" title="8.2.6：AbsoluteLayout绝对布局"></a>8.2.6：AbsoluteLayout绝对布局</h5><p> 不建议使用，其是通过坐标的方式定位位置的，在不同尺寸的屏幕上都会导致出现组件撕裂的状况</p>
+<h4 id="8-3：res应用资源"><a href="#8-3：res应用资源" class="headerlink" title="8.3：res应用资源"></a>8.3：res应用资源</h4><p>​	</p>
+<table>
+<thead>
+<tr>
+<th>animator&#x2F;</th>
+<th>用于定义属性动画的 XML 文件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>anim&#x2F;</td>
+<td>用于定义渐变动画的 XML 文件</td>
+</tr>
+<tr>
+<td>color&#x2F;</td>
+<td>用于定义颜色状态列表的 XML 文件</td>
+</tr>
+<tr>
+<td>drawable&#x2F;</td>
+<td>位图文件（.png、.9.png、.jpg、.gif）或编译为以下可绘制对象资源子类型的 XML 文件： 位图文件、九宫格（可调整大小的位图）、状态列表、形状、动画可绘制对象、其他可绘制对象</td>
+</tr>
+<tr>
+<td>mipmap&#x2F;</td>
+<td>适用于不同启动器图标密度的可绘制对象文件。应用图标放这里。mipmap后面跟着的dpi类别，比如<code>hdpi</code> <code>mdpi</code>，里面的图标尺寸大小是不同的。可以参考默认图标的大小，来切App的图标。如果要省事，可以用一个图标复制进各个目录中</td>
+</tr>
+<tr>
+<td>layout&#x2F;</td>
+<td>用于定义用户界面布局的 XML 文件。放layout文件。</td>
+</tr>
+<tr>
+<td>menu&#x2F;</td>
+<td>用于定义应用菜单（如选项菜单、上下文菜单或子菜单）的 XML 文件。</td>
+</tr>
+<tr>
+<td>values&#x2F;</td>
+<td>包含字符串、整型数和颜色等简单值的 XML 文件</td>
+</tr>
+<tr>
+<td>raw&#x2F;</td>
+<td>需以原始形式保存的任意文件</td>
+</tr>
+<tr>
+<td>xml&#x2F;</td>
+<td>可在运行时通过调用 Resources.getXML() 读取的任意 XML 文件。各种 XML 配置文件（如可搜索配置）都必须保存在此处</td>
+</tr>
+<tr>
+<td>font&#x2F;</td>
+<td>带有扩展名的字体文件（如 .ttf、.otf 或 .ttc），或包含 元素的 XML 文件</td>
+</tr>
+</tbody></table>
 <h3 id="9：事件处理机制"><a href="#9：事件处理机制" class="headerlink" title="9：事件处理机制"></a>9：事件处理机制</h3><h4 id="9-1：基于监听"><a href="#9-1：基于监听" class="headerlink" title="9.1：基于监听"></a>9.1：基于监听</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//匿名内部类的方式</span><br>findViewById(R.id.custom).setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnClickListener() &#123;<br>    <span class="hljs-meta">@Override</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View view)</span> &#123;<br>				...<br>        <br>&#125;);<br><br><br></code></pre></td></tr></table></figure>
 
 
@@ -690,7 +768,7 @@
 <figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">注意事项:<br><span class="hljs-number">1.</span>Task实例必须在UI线程中创建<br><span class="hljs-number">2.</span>execute方法必须在UI线程中调用<br><span class="hljs-number">3.</span>不要手动的调用on<span class="hljs-constructor">PreExecute()</span>. on<span class="hljs-constructor">PostExecute(Result)</span>. <span class="hljs-keyword">do</span><span class="hljs-constructor">InBackground(<span class="hljs-params">params</span><span class="hljs-operator">...</span>)</span>. on<span class="hljs-constructor">ProgressUpdate(Progress<span class="hljs-operator">...</span>)</span>这些方法<br><span class="hljs-number">4.</span>task只能执行一次，多次调用会出现异常<br></code></pre></td></tr></table></figure>
 
 <p> <strong>以上Handler和AsyncTask实现异步的方案在安卓11已被废弃</strong>，可使用Executors替代</p>
-<h3 id="10：网络编程"><a href="#10：网络编程" class="headerlink" title="10：网络编程"></a>10：网络编程</h3>
+
             </div>
             <hr>
             <div>
