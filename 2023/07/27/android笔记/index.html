@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      11.4k 字
+      12k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      157
+      165
        分钟
     </span>
   
@@ -739,7 +739,32 @@
 <td>带有扩展名的字体文件（如 .ttf、.otf 或 .ttc），或包含 元素的 XML 文件</td>
 </tr>
 </tbody></table>
-<h3 id="9：事件处理机制"><a href="#9：事件处理机制" class="headerlink" title="9：事件处理机制"></a>9：事件处理机制</h3><h4 id="9-1：基于监听"><a href="#9-1：基于监听" class="headerlink" title="9.1：基于监听"></a>9.1：基于监听</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//匿名内部类的方式</span><br>findViewById(R.id.custom).setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnClickListener() &#123;<br>    <span class="hljs-meta">@Override</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View view)</span> &#123;<br>				...<br>        <br>&#125;);<br><br><br></code></pre></td></tr></table></figure>
+<h4 id="8-4：MeasureSpec"><a href="#8-4：MeasureSpec" class="headerlink" title="8.4：MeasureSpec"></a>8.4：MeasureSpec</h4><p>​	父View通过MeasureSpec给子View传送尺寸的要求，MeasureSpec包含尺寸和模式(3种模式)</p>
+<p>​	<strong>1: unspecified(未指定)</strong></p>
+<p>父控件对子控件不加任何束缚，子元素可以得到任意想要的大小，这种MeasureSpec一般是由父控件自身的特性决定的。比如ScrollView，它的子View可以随意设置大小，无论多高，都能滚动显示，这个时候，size一般就没什么意义</p>
+<p>​	<strong>2：exactly(完全)</strong></p>
+<p>父控件为子View指定确切大小，希望子View完全按照自己给定尺寸来处理，这时的MeasureSpec一般是父控件根据自身的MeasureSpec跟子View的布局参数来确定的。一般这种情况下size&gt;0,有个确定值。</p>
+<p>​	<strong>3：at_most(至多)</strong></p>
+<p>父控件为子元素指定最大参考尺寸，希望子View的尺寸不要超过这个尺寸，这种模式也是父控件根据自身的MeasureSpec跟子View的布局参数来确定的，一般是子View的布局参数采用wrap_content的时候</p>
+<h4 id="8-5：View的post方法"><a href="#8-5：View的post方法" class="headerlink" title="8.5：View的post方法"></a>8.5：View的post方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">post</span><span class="hljs-params">(Runnable action)</span> &#123;<br>    <span class="hljs-keyword">final</span> <span class="hljs-type">AttachInfo</span> <span class="hljs-variable">attachInfo</span> <span class="hljs-operator">=</span> mAttachInfo;<br>    <span class="hljs-keyword">if</span> (attachInfo != <span class="hljs-literal">null</span>) &#123;<br>        <span class="hljs-comment">//这个方法是将一个Runnable加到消息队列中，并且会在这个		//handler关联的线程里执行</span><br>        <span class="hljs-keyword">return</span> attachInfo.mHandler.post(action);<br>    &#125;<br><br>    getRunQueue().post(action);<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><br><span class="hljs-keyword">private</span> HandlerActionQueue <span class="hljs-title function_">getRunQueue</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">if</span> (mRunQueue == <span class="hljs-literal">null</span>) &#123;<br>        mRunQueue = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HandlerActionQueue</span>();<br>    &#125;<br>    <span class="hljs-keyword">return</span> mRunQueue;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p><strong>1: AttachInfo</strong></p>
+<p>​	是View的静态内部类，View关联到父window后，用这个类存储一些信息</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">WindowId mWindowId <span class="hljs-keyword">window</span>的标志<br><span class="hljs-keyword">View</span> mRootView 最顶部的<span class="hljs-keyword">view</span><br><span class="hljs-keyword">Handler</span> mHandler 这个<span class="hljs-keyword">handler</span>可以用来处理任务<br></code></pre></td></tr></table></figure>
+
+<p><strong>2:HandlerActionQueue</strong></p>
+<p>​	当View还没有handler的时候，拿HandlerActionQueue来缓存任务，HandlerAction是它的静态内部类，存储Runnable与延时信息</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HandlerActionQueue</span> &#123;<br>    <span class="hljs-keyword">private</span> HandlerAction[] mActions;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">post</span><span class="hljs-params">(Runnable action)</span>&#123;<span class="hljs-comment">//...&#125;</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">executeActions</span><span class="hljs-params">(Handler handler)</span>&#123;<span class="hljs-comment">//...&#125;</span><br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HandlerAction</span> &#123;<br>        <span class="hljs-keyword">final</span> Runnable action;<br>        <span class="hljs-keyword">final</span> <span class="hljs-type">long</span> delay;<br>        <span class="hljs-comment">// ...</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>3:处理任务</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">void</span> <span class="hljs-title function_">dispatchAttachedToWindow</span><span class="hljs-params">(AttachInfo info, <span class="hljs-type">int</span> visibility)</span> &#123;<br>    <br>    <span class="hljs-keyword">if</span> (mRunQueue != <span class="hljs-literal">null</span>) &#123;<br>        mRunQueue.executeActions(info.mHandler);<br>        mRunQueue = <span class="hljs-literal">null</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>总结：</strong></p>
+<p><strong>View</strong>的post方法，实际上是使用了<strong>AttachInfo</strong>的<code>handler</code>。</p>
+<p>如果<strong>View</strong>当前还没有<strong>AttachInfo</strong>，则把任务添加到了<strong>View</strong>自己的<strong>HandlerActionQueue</strong>队列中，然后在<code>dispatchAttachedToWindow</code>中把任务交给传入的<strong>AttachInfo</strong>的<code>handler</code>。也可以这样认为，**<code>View.post</code>用的就是<code>handler.post</code>**</p>
+<p>我们在获取View的宽高时，会利用View的post方法，就是等View真的关联到window再拿宽高信息</p>
+<p><img src="E:\bolg\source_posts\android笔记.assets\Snipaste_2023-08-07_15-23-53.png" srcset="/img/loading.gif" lazyload alt="Snipaste_2023-08-07_15-23-53"></p>
+<h4 id="8-6-自定义View"><a href="#8-6-自定义View" class="headerlink" title="8.6: 自定义View"></a>8.6: 自定义View</h4><h3 id="9：事件处理机制"><a href="#9：事件处理机制" class="headerlink" title="9：事件处理机制"></a>9：事件处理机制</h3><h4 id="9-1：基于监听"><a href="#9-1：基于监听" class="headerlink" title="9.1：基于监听"></a>9.1：基于监听</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//匿名内部类的方式</span><br>findViewById(R.id.custom).setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnClickListener() &#123;<br>    <span class="hljs-meta">@Override</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View view)</span> &#123;<br>				...<br>        <br>&#125;);<br></code></pre></td></tr></table></figure>
 
 
 
