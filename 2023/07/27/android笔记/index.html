@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      12.6k 字
+      12.9k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      177
+      181
        分钟
     </span>
   
@@ -322,6 +322,28 @@
 </li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(<span class="hljs-built_in">this</span>, SecondActivity.class);<br>intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);<span class="hljs-comment">//Flag</span><br>startActivity(intent);<br><br>JAVA<br><span class="hljs-comment">//使用一个新的Task来启动Activity，但每个Activity都将在一个新的Task中。</span><br>Intent.FLAG_ACTIVITY_NEW_TASK   <br><span class="hljs-comment">//使用singleTop模式来启动一个Activity。  </span><br>Intent.FLAG_ACTIVITY_SINGLE_TOP  <br><span class="hljs-comment">//使用singleTask模式来启动一个Activity。</span><br>Intent.FLAG_ACTIVITY_CLEAR_TOP<br><span class="hljs-comment">//使用singleTask模式来启动一个Activity，使用这种方式启动Activity，当Activity启动其他Activity的时候，该Activity会被销毁，不入栈。  </span><br>Intent.FLAG_ACTIVITY_NO_HISTORY<br><span class="hljs-comment">//方式无法指定 SingleInstance 模式，SingleInstances 只能在 AndroidManifest.xml 中声明。</span><br>Intent.setFlags<br><br><br></code></pre></td></tr></table></figure>
+
+<p>2.5：携带参数启动</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//启动端</span><br><span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(getApplicationContext(), SendParamsDemo.class);<br>intent.putExtra(SendParamsDemo.K_INT, <span class="hljs-number">100</span>);<br>intent.putExtra(SendParamsDemo.K_BOOL, <span class="hljs-literal">true</span>);<br>intent.putExtra(SendParamsDemo.K_STR, <span class="hljs-string">&quot;Input string&quot;</span>);<br>startActivity(intent);<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//接收端</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SendParamsDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AbsActivity</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">K_INT</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;k_int&quot;</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">K_BOOL</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;k_bool&quot;</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">K_STR</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;k_str&quot;</span>;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> &#123;<br>        <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);<br>        gotInput();<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getInput</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> getIntent();<br>        <span class="hljs-keyword">if</span> (intent != <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> intent.getIntExtra(K_INT, -<span class="hljs-number">1</span>);<br>            <span class="hljs-type">boolean</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> intent.getBooleanExtra(K_BOOL, <span class="hljs-literal">false</span>);<br>            <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> intent.getStringExtra(K_STR);<br>            Log.d(TAG, <span class="hljs-string">&quot;getInput: i:&quot;</span> + i + <span class="hljs-string">&quot;, b: &quot;</span> + b + <span class="hljs-string">&quot;, str: &quot;</span> + str);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            Log.d(TAG, <span class="hljs-string">&quot;getInput: input null.&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-comment">// 输出结果</span><br><span class="hljs-comment">// getInput: i:100, b: true, str: Input string</span><br><br></code></pre></td></tr></table></figure>
+
+<p>ps: Intent还可以携带Serialiszable对象，自定义类实现Serializeable即可</p>
+<p><strong>例：</strong>打电话</p>
+<p>需要申请动态权限<code>CALL_PHONE</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.CALL_PHONE&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>使用<code>Intent.ACTION_CALL</code>是直接打出去</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">Intent intent = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Intent(Intent.ACTION_CALL, Uri.<span class="hljs-params">parse</span>(<span class="hljs-string">&quot;tel:&quot;</span> + <span class="hljs-params">phonenumber</span>)</span>);<br>intent.set<span class="hljs-constructor">Flags(Intent.FLAG_ACTIVITY_NEW_TASK)</span>;<br>start<span class="hljs-constructor">Activity(<span class="hljs-params">intent</span>)</span>;<br></code></pre></td></tr></table></figure>
+
+<p>使用<code>Intent.ACTION_DIAL</code>会停留在拨号界面</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">Intent intent = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Intent(Intent.ACTION_DIAL, Uri.<span class="hljs-params">parse</span>(<span class="hljs-string">&quot;tel:&quot;</span> + <span class="hljs-params">phonenumber</span>)</span>);<br>intent.set<span class="hljs-constructor">Flags(Intent.FLAG_ACTIVITY_NEW_TASK)</span>;<br>start<span class="hljs-constructor">Activity(<span class="hljs-params">intent</span>)</span>;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
 
 <h3 id="3：Fragment详解"><a href="#3：Fragment详解" class="headerlink" title="3：Fragment详解"></a>3：Fragment详解</h3><h4 id="3-1：基本概念"><a href="#3-1：基本概念" class="headerlink" title="3.1：基本概念"></a>3.1：基本概念</h4><p> Fragment(片段)，依赖于activity,一个activity中可以有多个片段，可以在activity中动态添加删除，且Fragment有自己的生命周期，能够接受自己的输入事件</p>
 <p> 即页面的一部分</p>
@@ -810,6 +832,7 @@
 <figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">注意事项:<br><span class="hljs-number">1.</span>Task实例必须在UI线程中创建<br><span class="hljs-number">2.</span>execute方法必须在UI线程中调用<br><span class="hljs-number">3.</span>不要手动的调用on<span class="hljs-constructor">PreExecute()</span>. on<span class="hljs-constructor">PostExecute(Result)</span>. <span class="hljs-keyword">do</span><span class="hljs-constructor">InBackground(<span class="hljs-params">params</span><span class="hljs-operator">...</span>)</span>. on<span class="hljs-constructor">ProgressUpdate(Progress<span class="hljs-operator">...</span>)</span>这些方法<br><span class="hljs-number">4.</span>task只能执行一次，多次调用会出现异常<br></code></pre></td></tr></table></figure>
 
 <p> <strong>以上Handler和AsyncTask实现异步的方案在安卓11已被废弃</strong>，可使用Executors替代</p>
+<p>NDK</p>
 
             </div>
             <hr>
