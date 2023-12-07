@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/cute_icon.png">
+  <link rel="icon" href="/img/cute_icon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="lier">
+  <meta name="keywords" content="">
+  
+  <title>Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>lier的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/background.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-12-07 10:07" pubdate>
+        2023年12月7日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      881 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      10
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            <div class="markdown-body">
+              <h3 id="Android-mk语法详解"><a href="#Android-mk语法详解" class="headerlink" title="Android.mk语法详解"></a>Android.mk语法详解</h3><h4 id="1-示例"><a href="#1-示例" class="headerlink" title="1.示例"></a>1.示例</h4><p><img src="D:\project\bolg\source_posts\Android.mk语法详解.assets\Snipaste_2023-12-07_10-05-37-1701914901788.png" srcset="/img/loading.gif" lazyload alt="Snipaste_2023-12-07_10-05-37"></p>
+<ul>
+<li><code>src</code> 文件中包含着 <code>Java</code> 源文件、<code>jni</code> 目录。<code>jni</code> 目录下包含着 <code>.cpp</code> &#x2F; <code>.mk</code> ;</li>
+<li><code>jni/Android.mk</code> 描述如何把 <code>hello_mk.cpp</code> 等文件构建成一个动态库，其内容如下：</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs makefile">LOCAL_PATH := <span class="hljs-variable">$(<span class="hljs-built_in">call</span> my-<span class="hljs-built_in">dir</span>)</span><br><span class="hljs-keyword">include</span> <span class="hljs-variable">$(CLEAR_VARS)</span><br><br>LOCAL_MODULE := hello_mk<br>LOCAL_SRC_FILES := hello_mk.cpp<br><br><span class="hljs-keyword">include</span> <span class="hljs-variable">$(BUILD_SHARED_LIBRARY)</span><br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-comment"># `Android.mk` 文件必须在文件头部最开始处定义 `LOCAL_PATH` 变量，该变量用来获取工程中的文件节点。在上述工程图中，通过构建系# # 统提供的函数 `my-dir` 获取 `Android.mk` 当前的所在的目录节点。</span><br><br>LOCAL_PATH := <span class="hljs-variable">$(<span class="hljs-built_in">call</span> my-<span class="hljs-built_in">dir</span>)</span><br><br><br><span class="hljs-comment"># CLEAR_VARS 可简单理解为初始化环境, include $(CLEAR_VARS) 声明是必须的，因为 Android.mk 在第一次被解析的时候，变量被初#  # 始化为为知的值（这里个人理解为类似 C 中的数据定义未初始化，被其值被系统赋值为垃圾值）</span><br><br><span class="hljs-keyword">include</span> <span class="hljs-variable">$(CLEAR_VARS)</span><br><br><span class="hljs-comment"># LOCAL_MODULE 变量是用来声明需要被生成的 module 名称。该定义的名称在整个工程中必须是唯一的，同时在构建的时候，系统会自动为该 # module 名称补全前缀、以及后缀。也就是说，上文定义的动态库名称 hello_mk 最后被补全为 libhello_mk.so。当然，如果我们使用 # # LOCAL_MODULE := libhello_mk 声明的时候，系统则不会为其添加前缀。</span><br><br>LOCAL_MODULE := hello_mk<br><br><span class="hljs-comment"># 变量 LOCAL_SRC_FILES 是用来定义将要生成的目标动态库所需要的源码文件列表，如 c 或者 c++ 文件。但我们不要把头文件或者被 include 的文件也定义到该变量列表中，因为这些构建系统已经自动地帮我们完成这些任务。</span><br><br>LOCAL_SRC_FILES := hello-jni.c <span class="hljs-comment">#注意：只需要源文件列表，头文件构建系统会自动完成构建</span><br><br><br><span class="hljs-comment"># 变量 BUILD_SHARED_LIBRARY 被定义后，GNU Makefile 脚本就会负责把 include $(BUILD_SHARED_LIBRARY) 往上定义的如 LOCAL_XXX 变量都收集起来，直到离 include $(BUILD_SHARED_LIBRARY)  最近的定义的  include $(CLEAR_VARS) 为止。可简单理解为 [include $(CLEAR_VARS) ... include $(BUILD_SHARED_LIBRARY)] 之间的 LOCAL_XXX 的变量将决定如何生成一个动态库。当然，BUILD_STATIC_LIBRARY 变量是用来声明定义生成静态库。</span><br><br><span class="hljs-keyword">include</span> <span class="hljs-variable">$(BUILD_SHARED_LIBRARY)</span><br><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-自定义变量"><a href="#2-自定义变量" class="headerlink" title="2.自定义变量"></a>2.自定义变量</h4><p>构建系统会提供一系列的 <code>.mk</code> 变量供我们使用，当然我们也可以在我们工程需要的时候自定义某些变量。但需要注意不能与构建系统保留的变量名发生冲突：</p>
+<ul>
+<li>以 <code>LOCAL_</code> 开头的变量名；（如 <code>LOCAL_MODULE</code>）</li>
+<li>以 <code>PRIVATE_</code>、<code>NDK_</code>、<code>APP_</code> 开头的变量名；（这些开头的变量名称被用以系统内部）</li>
+<li><code>lower-case</code> 名称；（用以系统内部，如 <code>my-dir</code>）</li>
+</ul>
+<p>如果<strong>我们需要自定义变量，官方推荐我们使用 <code>MY_</code> 前缀开头的变量，避免与系统变量发生冲突</strong>，如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs makefile">MY_SOURCES := foo.c<br><span class="hljs-keyword">ifneq</span> (<span class="hljs-variable">$(MY_CONFIG_BAR)</span>,)<br>MY_SOURCES += bar.c<br><span class="hljs-keyword">endif</span><br>LOCAL_SRC_FILES += <span class="hljs-variable">$(MY_SOURCES)</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-NDK提供的变量"><a href="#3-NDK提供的变量" class="headerlink" title="3.NDK提供的变量"></a>3.NDK提供的变量</h4><p><strong>PREBUILT_SHARED_LIBRARY</strong></p>
+<p>该变量用来指定一个需要被依赖进工程的动态库。与 <code>BUILD_SHARED_LIBRARY</code> 、<code>BUILD_STATIC_LIBRARY</code> 不同的是，该变量对应的 <code>LOCAL_SRC_FILES</code> 必须被初始化为一个需要被纳入到工程的动态库路径，而不是源码文件</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-keyword">include</span> <span class="hljs-variable">$(CLEAR_VARS)</span><br>LOCAL_MODULE := foo-prebuilt<br>LOCAL_SRC_FILES := libfoo.so<br>LOCAL_EXPORT_C_INCLUDES := <span class="hljs-variable">$(LOCAL_PATH)</span>/<span class="hljs-keyword">include</span>  <span class="hljs-comment">#导出libfoo.so的头文件</span><br><span class="hljs-keyword">include</span> <span class="hljs-variable">$(PREBUILT_SHARED_LIBRARY)</span><br><br><span class="hljs-keyword">include</span> <span class="hljs-variable">$(CLEAR_VARS)</span><br>LOCAL_MODULE := foo-user<br>LOCAL_SRC_FILES := foo-user.c<br>LOCAL_SHARED_LIBRARY := foo-prebuilt<br><span class="hljs-keyword">include</span> <span class="hljs-variable">$(BUILD_SHARED_LIBRARY)</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>PREBUILT_STATIC_LIBRARY</strong></p>
+<p>作用和 <code>PREBUILT_SHARED_LIBRARY</code> 类似，只是该初始化的为静态库路径</p>
+<p><strong>TARGET_ARCH</strong></p>
+<p>指定程序运行的目标 CPU 架构指令集的名称</p>
+<p><strong>TARGET_PLATFORM</strong></p>
+<p>指定 <code>Android.mk</code> 文件将被哪一个 Android 版本解析。例如，<code>&#39;android-3&#39;</code> 对应于 Android 1.5 系统镜像</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/11/AIDL%E8%AF%A6%E8%A7%A3/">
+                        <span class="hidden-mobile">AIDL详解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <i class="iconfont icon-love"></i>lier 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
