@@ -297,6 +297,10 @@
 
 <p><strong>except使用</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs SHELL"><span class="hljs-meta prompt_"># </span><span class="language-bash">安装except</span><br>yum install except<br><span class="hljs-meta prompt_"># </span><span class="language-bash">在shell中写expect脚本</span><br>/usr/bin/expect&lt;&lt;eof<br>	set timeout 10  #超时时间<br>	spawn git pull  https://gitee.com/lier-lier/cicd.git #调用命令<br>	expect &quot;Username*&quot; # 控制台触发Username开头字符<br>	send &quot;$gitAccount\n&quot; #出发后输入密码<br>	expect &quot;Password*&quot;<br>	send &quot;$gitPassword\n&quot;<br>	expect eof<br>	exit<br>eof<br><br><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="6-Sed和gawk"><a href="#6-Sed和gawk" class="headerlink" title="6: Sed和gawk"></a>6: Sed和gawk</h3>
             </div>
             <hr>
             <div>
