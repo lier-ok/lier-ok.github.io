@@ -182,53 +182,6 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2023/12/29/Android%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4/"></a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2023/12/29/Android%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4/">
-          
-          
-            
-          
-          Android串口调试命令1: logcat获取当前启动的app，cmp&#x3D;{}的就是启动activity
-1logcat | grep START
-
-
-将log输出到1.txt，退出按Ctrl+C
-1logcat &gt; 1.txt
-
-
-抓取TAG为song的log
-1logcat -s song &gt; 1.txt
-
-
-抓取所有的错误log
-1logcat -s *:E &gt; 
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-12-29 10:56" pubdate>
-              2023-12-29
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
         <a href="/2023/12/07/Leanback%E5%BA%93%E4%BD%BF%E7%94%A8/"></a>
       </h1>
 
@@ -270,21 +223,17 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2023/12/07/Android.mk%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3/"></a>
+        <a href="/2023/11/13/%E5%AE%89%E5%8D%93%E6%8C%89%E9%94%AE%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92%E6%B5%81%E7%A8%8B/">安卓按键事件传递流程</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2023/12/07/Android.mk%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3/">
+        <a href="/2023/11/13/%E5%AE%89%E5%8D%93%E6%8C%89%E9%94%AE%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92%E6%B5%81%E7%A8%8B/">
           
           
             
           
-          Android.mk语法详解1.示例
-
-src 文件中包含着 Java 源文件、jni 目录。jni 目录下包含着 .cpp &#x2F; .mk ;
-jni/Android.mk 描述如何把 hello_mk.cpp 等文件构建成一个动态库，其内容如下：
-
-1234567LOCAL_PATH := $(call my-dir)include $(CLEAR_VARS)LOCAL_MODULE :
+          安卓按键事件传递流程1.Framework层如何获得输入事件1.1： InputManagerService的初始化​		**SystemServer ** (frameworks&#x2F;base&#x2F;services&#x2F;java&#x2F;com&#x2F;android&#x2F;server&#x2F;SystemServer.java)
+​		安卓系统启动时，首先创建Sy
         </a>
       </p>
 
@@ -292,8 +241,136 @@ jni/Android.mk 描述如何把 hello_mk.cpp 等文件构建成一个动态库，
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-12-07 10:07" pubdate>
-              2023-12-07
+            <time datetime="2023-11-13 18:07" pubdate>
+              2023-11-13
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/09/27/android%E7%AC%94%E8%AE%B0/">Android应用层</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/09/27/android%E7%AC%94%E8%AE%B0/">
+          
+          
+            
+          
+          Android应用层1：架构说明
+
+1.1：Linux 内核
+1234Android 平台的基础是 Linux 内核。例如，Android Runtime (ART) 依靠 Linux 内核来执行底层功能，例如线程和底层内存管理。使用 Linux 内核可让 Android 利用主要安全功能，并且允许设备制造商为著名的内核开发硬件驱动程序MIPSASM
+
+1.2：硬件抽象层 (HAL)
+123硬件抽
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-09-27 11:07" pubdate>
+              2023-09-27
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/09/27/Android.mk%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3/">mk语法详解</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/09/27/Android.mk%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3/">
+          
+          
+            
+          
+          mk语法详解1.示例
+
+src 文件中包含着 Java 源文件、jni 目录。jni 目录下包含着 .cpp &#x2F; .mk ;
+jni/Android.mk 描述如何把 hello_mk.cpp 等文件构建成一个动态库，其内容如下：
+
+1234567LOCAL_PATH := $(call my-dir)include $(CLEAR_VARS)LOCAL_MODULE := hello_
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-09-27 11:07" pubdate>
+              2023-09-27
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/09/27/Android%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4/">串口调试命令</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/09/27/Android%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4/">
+          
+          
+            
+          
+          串口调试命令1: logcat获取当前启动的app，cmp&#x3D;{}的就是启动activity
+1logcat | grep START
+
+
+将log输出到1.txt，退出按Ctrl+C
+1logcat &gt; 1.txt
+
+
+抓取TAG为song的log
+1logcat -s song &gt; 1.txt
+
+
+抓取所有的错误log
+1logcat -s *:E &gt; 1.txt
+
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-09-27 11:07" pubdate>
+              2023-09-27
             </time>
           </div>
         
@@ -436,46 +513,6 @@ jni/Android.mk 描述如何把 hello_mk.cpp 等文件构建成一个动态库，
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2023/07/27/android%E7%AC%94%E8%AE%B0/"></a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2023/07/27/android%E7%AC%94%E8%AE%B0/">
-          
-          
-            
-          
-          Android开发1：架构说明
-
-1.1：Linux 内核
-1234Android 平台的基础是 Linux 内核。例如，Android Runtime (ART) 依靠 Linux 内核来执行底层功能，例如线程和底层内存管理。使用 Linux 内核可让 Android 利用主要安全功能，并且允许设备制造商为著名的内核开发硬件驱动程序MIPSASM
-
-1.2：硬件抽象层 (HAL)
-123硬件抽象
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-07-27 11:09" pubdate>
-              2023-07-27
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
         <a href="/2023/07/27/CICD/">CICD</a>
       </h1>
 
@@ -548,50 +585,6 @@ jni/Android.mk 描述如何把 hello_mk.cpp 等文件构建成一个动态库，
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/%E5%AE%B9%E5%99%A8%E8%99%9A%E6%8B%9F%E5%8C%96/">容器虚拟化</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/07/27/JUC%E5%B9%B6%E5%8F%91%E8%AF%A6%E8%A7%A3/">JUC并发详解</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2023/07/27/JUC%E5%B9%B6%E5%8F%91%E8%AF%A6%E8%A7%A3/">
-          
-          
-            
-          
-          JUC并发编程1: 什么是JUC1.1: 概念 JUC 就是 java.util .concurrent 工具包的简称。这是一个处理线程的工具包，JDK 1.5 开始出现的。
-2: 线程和进程相关概念2.1: 进程和线程 进程: 计算机中一个运行起来的程序,是系统进行资源分配和调度的基本单位,是操作系统的结构的基础
- 是线程的容器
- 线程: 是进程中一个单一的顺序控制流,操作系统能够进行运算调度的
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-07-27 10:42" pubdate>
-              2023-07-27
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/java/">java</a>
             
           </div>
         

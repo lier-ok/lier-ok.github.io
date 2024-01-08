@@ -18,7 +18,7 @@
   <meta name="author" content="lier">
   <meta name="keywords" content="">
   
-  <title>Blog</title>
+  <title>串口调试命令 - Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="">
+            <span class="h2" id="subtitle" title="串口调试命令">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2023-12-29 10:56" pubdate>
-        2023年12月29日 上午
+      <time datetime="2023-09-27 11:07" pubdate>
+        2023年9月27日 上午
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      440 字
+      488 字
     </span>
   
 
@@ -225,10 +225,10 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">串口调试命令</h1>
             
             <div class="markdown-body">
-              <h3 id="Android串口调试命令"><a href="#Android串口调试命令" class="headerlink" title="Android串口调试命令"></a>Android串口调试命令</h3><h4 id="1-logcat"><a href="#1-logcat" class="headerlink" title="1: logcat"></a>1: logcat</h4><p>获取当前启动的app，cmp&#x3D;{}的就是启动activity</p>
+              <h3 id="串口调试命令"><a href="#串口调试命令" class="headerlink" title="串口调试命令"></a>串口调试命令</h3><h4 id="1-logcat"><a href="#1-logcat" class="headerlink" title="1: logcat"></a>1: logcat</h4><p>获取当前启动的app，cmp&#x3D;{}的就是启动activity</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">logcat | grep START<br></code></pre></td></tr></table></figure>
 
 
@@ -341,7 +341,11 @@
 
 
 <h4 id="7-settings命令"><a href="#7-settings命令" class="headerlink" title="7: settings命令"></a>7: settings命令</h4><p>用串口：（system，secure类似）</p>
-<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs vbnet">settings <span class="hljs-keyword">get</span> <span class="hljs-keyword">global</span> 系统属性<span class="hljs-keyword">key</span><br><br>settings put <span class="hljs-keyword">global</span> 系统属性<span class="hljs-keyword">key</span> 系统属性值<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">settings get global 系统属性key<br><br>settings put global 系统属性key 系统属性值<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="8-获取系统变量"><a href="#8-获取系统变量" class="headerlink" title="8: 获取系统变量"></a>8: 获取系统变量</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">//在java代码中获取persist.prop.screenorientation变量的值<br>SystemProperties.get(&quot;persist.prop.screenorientation&quot;, &quot;Unknown&quot;);<br><br>//在debug命令行获取persist.prop.screenorientation变量的值<br>getprop &quot;persist.prop.screenorientation&quot;<br></code></pre></td></tr></table></figure>
 
 
             </div>
@@ -363,12 +367,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2023/09/27/Android.mk%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">mk语法详解</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/07/Leanback%E5%BA%93%E4%BD%BF%E7%94%A8/">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2023/08/11/AIDL%E8%AF%A6%E8%A7%A3/">
+                        <span class="hidden-mobile">AIDL详解</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
