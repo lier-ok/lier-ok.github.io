@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      342 字
+      345 字
     </span>
   
 
@@ -228,7 +228,7 @@
             <h1 style="display: none">添加遥控按键</h1>
             
             <div class="markdown-body">
-              <h3 id="添加遥控按键"><a href="#添加遥控按键" class="headerlink" title="添加遥控按键"></a>添加遥控按键</h3><h5 id="1-新增遥控键码"><a href="#1-新增遥控键码" class="headerlink" title="1: 新增遥控键码"></a>1: 新增遥控键码</h5><p>在遥控的配置文件中新增一个键值对</p>
+              <h2 id="一-添加红外遥控按键"><a href="#一-添加红外遥控按键" class="headerlink" title="一: 添加红外遥控按键"></a>一: 添加红外遥控按键</h2><h5 id="1-新增遥控键码"><a href="#1-新增遥控键码" class="headerlink" title="1: 新增遥控键码"></a>1: 新增遥控键码</h5><p>在遥控的配置文件中新增一个键值对</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">key</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;0x1fbf00&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;KEY_TOAST&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
 
 
@@ -239,7 +239,7 @@
 <h5 id="3-修改kl文件"><a href="#3-修改kl文件" class="headerlink" title="3: 修改kl文件"></a>3: 修改kl文件</h5><p>通过 <code>dumpsys input</code> 命令找到遥控对应的kl文件</p>
 <p><img src="D:\project\bolg\source_posts\添加遥控按键.assets\image-20240108171302964.png" srcset="/img/loading.gif" lazyload alt="image-20240108171302964"></p>
 <p>文件路径: device&#x2F;hisilicon&#x2F;bigfish&#x2F;prebuilts&#x2F;Vendor_0001_Product_0001.kl</p>
-<p>编译时复制到途中目录</p>
+<p>编译时复制到图中目录</p>
 <p>在文件中添加如下</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs kotlin">key <span class="hljs-number">645</span>   KEY_TOAST<br></code></pre></td></tr></table></figure>
 
@@ -294,6 +294,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/05/10/Android%20IPC/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

@@ -182,6 +182,151 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2024/06/07/Android%E5%8A%A8%E7%94%BB%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90/"></a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2024/06/07/Android%E5%8A%A8%E7%94%BB%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90/">
+          
+          
+            
+          
+          Android动画深入分析​		安卓的动画分为三种, View动画, 帧动画 和 属性动画
+​			View动画通过对场景里的对象不断做图像变换(平移缩放, 旋转,透明度)变换从而产生动画效	果, 属于一种渐进式动画, 且支持自定义
+​			帧动画通过舒徐播放一系列图像从而产生动画效果
+​			属性动画通过动态的改变对象的属性从而达到动画效果, 从ApI11开始支持
+1: View动画1.1: 种
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-06-07 18:05" pubdate>
+              2024-06-07
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2024/06/05/RemoteView/"></a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2024/06/05/RemoteView/">
+          
+          
+            
+          
+          RemoteView1: 应用场景​		开发中,主要用于通知栏和桌面小组件, 他们在运行时无法和Activity一样直接更新View, 因为他们运行中SystemServer进程中, 只能使用RemoteView跨进程更新View
+1.1:通知栏中的运用(通过NotificationManager实现)123456789101112131415161718192021&lt;!--自定义通知的UI
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-06-05 11:42" pubdate>
+              2024-06-05
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2024/05/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%20View/"></a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2024/05/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%20View/">
+          
+          
+            
+          
+          深入理解Android View1: View初识别1.1: 基本概念​		view是界面层的控件的一种抽象, 代表一个控件, 还有控件组ViewGroup, 内部包含许多控件(即一组控件) , ViewGroup继承了View
+​		所以View可以是一个控件, 也可以是多个控件组成的一组控件
+​		如Button是一个View, LinearLayout不但是个View,还是个ViewGrou
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-05-20 16:52" pubdate>
+              2024-05-20
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2024/05/10/Android%20IPC/"></a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2024/05/10/Android%20IPC/">
+          
+          
+            
+          
+          Android IPC1: 简介​		IPC(Inter-Process Communication), 即进程间通信或者跨进程通信, 是指两个进程间进行数据交换得过程
+2: 多进程模式​		将四大组件(Activity, Service, Receiver, ContentProvider)声明时,在AndroidMenifest中指定android:process属性
+123456789101
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-05-10 14:02" pubdate>
+              2024-05-10
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2024/01/08/%E6%B7%BB%E5%8A%A0%E9%81%A5%E6%8E%A7%E6%8C%89%E9%94%AE/">添加遥控按键</a>
       </h1>
 
@@ -191,12 +336,12 @@
           
             
           
-          添加遥控按键1: 新增遥控键码在遥控的配置文件中新增一个键值对
+          一: 添加红外遥控按键1: 新增遥控键码在遥控的配置文件中新增一个键值对
 1&lt;key value=&quot;0x1fbf00&quot; name=&quot;KEY_TOAST&quot;/&gt;
 
 
 
-2: 修改linux_key.h12345const linux_keycode_ary g_linuxKeycodeArray[LINUX_KEYCODE_ARY_SIZE] = &#123;
+2: 修改linux_key.h12345const linux_keycode_ary g_linuxKeycodeArray[LINUX_KEYCODE_ARY_SIZE] = &
         </a>
       </p>
 
@@ -414,176 +559,6 @@ jni/Android.mk 描述如何把 hello_mk.cpp 等文件构建成一个动态库，
           </div>
         
         
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/08/11/AIDL%E8%AF%A6%E8%A7%A3/">AIDL详解</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2023/08/11/AIDL%E8%AF%A6%E8%A7%A3/">
-          
-          
-            
-          
-          AIDL详解1：是什么？​	AIDL（Android Interface Definition Language）是一种用于在Android应用程序组件之间进行跨进程通信（IPC）的编程语言和工具。通过使用AIDL，开发人员可以定义接口，并使不同的应用程序组件之间能够进行方法调用和数据传输
-2：有什么用？1.跨应用程序通信
-1AIDL允许不同应用程序之间进行跨进程通信。这在需要多个应用程序之间共享
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-11 11:51" pubdate>
-              2023-08-11
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/aidl/">aidl</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/07/27/jni%E7%BC%96%E7%A8%8B/">jni编程</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2023/07/27/jni%E7%BC%96%E7%A8%8B/">
-          
-          
-            
-          
-          JNI开发流程1：介绍JNI是Java Native Interface的缩写，JNI是JAVA平台专门用于和本地C代码进行相互操作的API，称为JAVA本地接口。
-2：流程 实现java代码
-1234567891011121314151617181920// java代码实现public class HelloNative&#123;        //加载绝对路径下的so文件，dll为wind
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-07-27 11:27" pubdate>
-              2023-07-27
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/jni/">jni</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/07/27/c++%E7%AC%94%E8%AE%B0/">c++笔记</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2023/07/27/c++%E7%AC%94%E8%AE%B0/">
-          
-          
-            
-          
-          C++ 编程1：helloword123456#include&lt;iostream&gt;using namespace std; //using namespace std; 告诉编译器使用 std 命名空间。命名空间是 C++ 中一个相对新的概念。int main()&#123;    cout &lt;&lt; &quot;helloworld&quot; &lt;&lt;  endl;
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-07-27 11:16" pubdate>
-              2023-07-27
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/c/">c++</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/07/27/CICD/">CICD</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2023/07/27/CICD/">
-          
-          
-            
-          
-          CI&#x2F;CD持续集成部署1.什么是CI&#x2F;CD
-
-2.搭建gitLab仓库1234567891011121314151617181920212223#1.创建目录/home/gitlab/config/home/gitlab/logs/home/gitlab/data#2.启动容器后,将对应文件复制到挂在目录下,删除容器#3.创建启动容器sudo docker run --deta
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-07-27 11:07" pubdate>
-              2023-07-27
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E9%9B%86%E6%88%90%E9%83%A8%E7%BD%B2/">集成部署</a>
-            
-          </div>
         
       </div>
     </article>

@@ -1,0 +1,508 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/cute_icon.png">
+  <link rel="icon" href="/img/cute_icon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="lier">
+  <meta name="keywords" content="">
+  
+  <title>Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>lier的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/background.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2024-06-05 11:42" pubdate>
+        2024年6月5日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      46
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            <div class="markdown-body">
+              <h4 id="RemoteView"><a href="#RemoteView" class="headerlink" title="RemoteView"></a>RemoteView</h4><h5 id="1-应用场景"><a href="#1-应用场景" class="headerlink" title="1: 应用场景"></a>1: 应用场景</h5><p>​		开发中,主要用于通知栏和桌面小组件, 他们在运行时无法和Activity一样直接更新View, 因为他们运行中SystemServer进程中, 只能使用RemoteView跨进程更新View</p>
+<h6 id="1-1-通知栏中的运用-通过NotificationManager实现"><a href="#1-1-通知栏中的运用-通过NotificationManager实现" class="headerlink" title="1.1:通知栏中的运用(通过NotificationManager实现)"></a>1.1:<strong>通知栏中的运用</strong>(通过NotificationManager实现)</h6><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--自定义通知的UI布局--&gt;</span><br><span class="hljs-comment">&lt;!-- res/layout/remote_view.xml --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;horizontal&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:padding</span>=<span class="hljs-string">&quot;8dp&quot;</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/image&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@drawable/ic_launcher_foreground&quot;</span> /&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/text&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Hello, RemoteViews!&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppCompatActivity</span> &#123;<br><br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">CHANNEL_ID</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;channel_id&quot;</span>;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> &#123;<br>        <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);<br>        setContentView(R.layout.activity_main);<br>        createNotificationChannel();<br>        showDefaultNotification();<br>    &#125;<br><br><br>	<span class="hljs-comment">//发起通知</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">showDefaultNotification</span><span class="hljs-params">()</span>&#123;<br><br>        <span class="hljs-comment">//自定义通知的UI</span><br>        <span class="hljs-type">RemoteViews</span> <span class="hljs-variable">notificationLayout</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RemoteViews</span>(getPackageName(), R.layout.remote_view);<br>        notificationLayout.setTextViewText(R.id.text, <span class="hljs-string">&quot;Hello RemoteView&quot;</span>);<br>        notificationLayout.setImageViewResource(R.id.image, R.drawable.test);<br><br>        NotificationCompat.<span class="hljs-type">Builder</span> <span class="hljs-variable">builder</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">NotificationCompat</span>.Builder(<span class="hljs-built_in">this</span>, CHANNEL_ID);<br>        <span class="hljs-comment">//设置通知的基本信息: icon, 标题, 内容</span><br>        builder.setSmallIcon(R.mipmap.ic_launcher);<br>        builder.setContentTitle(<span class="hljs-string">&quot;通知&quot;</span>);<br>        builder.setContent(notificationLayout);<br>        <span class="hljs-comment">//设置通知优先级</span><br>        builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);<br>        <span class="hljs-comment">//用户点击通知后, 自动取消改通知</span><br>        builder.setAutoCancel(<span class="hljs-literal">true</span>);<br><br>        <span class="hljs-comment">//设置点击通知的行为: 启动NotificationActivity</span><br>        <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(<span class="hljs-built_in">this</span>, NotificationActivity.class);<br>        <span class="hljs-comment">//创建一个 PendingIntent 对象，用于描述跳转操作</span><br>        <span class="hljs-type">PendingIntent</span> <span class="hljs-variable">pendingIntent</span> <span class="hljs-operator">=</span> PendingIntent.getActivity(<span class="hljs-built_in">this</span>, <span class="hljs-number">0</span>, intent,<br>                PendingIntent.FLAG_UPDATE_CURRENT);<br>        builder.setContentIntent(pendingIntent);<br><br>        <span class="hljs-comment">//获取通知栏管理服务</span><br>        <span class="hljs-type">NotificationManager</span> <span class="hljs-variable">notificationManager</span> <span class="hljs-operator">=</span> (NotificationManager) 			                       getSystemService(Context.NOTIFICATION_SERVICE);<br>        <span class="hljs-comment">//参数一为通知id, 需要在当前应用内唯一</span><br>        notificationManager.notify((<span class="hljs-type">int</span>) System.currentTimeMillis(), builder.build());<br>    &#125;<br><br><br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">     * 由于 Android 8.0（API 级别 26）引入了通知渠道的概念</span><br><span class="hljs-comment">     * 应用程序需要使用通知渠道来发送通知。如果没有为应用程序设置通知渠道</span><br><span class="hljs-comment">     * 会报错 No Channel found for pkg=包名</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createNotificationChannel</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-keyword">if</span>(Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O)&#123;<br>            <span class="hljs-type">CharSequence</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Channel Name&quot;</span>;<br>            <span class="hljs-type">String</span> <span class="hljs-variable">description</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Channel Description&quot;</span>;<br><br>            <span class="hljs-type">int</span> <span class="hljs-variable">importance</span> <span class="hljs-operator">=</span> NotificationManager.IMPORTANCE_DEFAULT;<br>            <span class="hljs-type">NotificationChannel</span> <span class="hljs-variable">notificationChannel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">NotificationChannel</span>(CHANNEL_ID, name, importance);<br><br>            <span class="hljs-type">NotificationManager</span> <span class="hljs-variable">notificationManager</span> <span class="hljs-operator">=</span> (NotificationManager) 			 getSystemService(Context.NOTIFICATION_SERVICE);<br>            			     			   								           notificationManager.createNotificationChannel(notificationChannel);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\66447\AppData\Roaming\Typora\typora-user-images\image-20240605111931997.png" srcset="/img/loading.gif" lazyload alt="image-20240605111931997"></p>
+<h6 id="1-2-桌面小组件的应用-通过AppWidgetProvider实现"><a href="#1-2-桌面小组件的应用-通过AppWidgetProvider实现" class="headerlink" title="1.2: 桌面小组件的应用(通过AppWidgetProvider实现)"></a>1.2: <strong>桌面小组件的应用</strong>(通过AppWidgetProvider实现)</h6><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--设置小组件的布局--&gt;</span><br><br><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;horizontal&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:weightSum</span>=<span class="hljs-string">&quot;5&quot;</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/btn1&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:focusable</span>=<span class="hljs-string">&quot;true&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:clickable</span>=<span class="hljs-string">&quot;true&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">&quot;5dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@drawable/camera&quot;</span> /&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;50dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;20dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">&quot;-15dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginBottom</span>=<span class="hljs-string">&quot;5dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;相机&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:textColor</span>=<span class="hljs-string">&quot;@android:color/black&quot;</span> /&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/btn2&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">&quot;5dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@drawable/gif&quot;</span> /&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;50dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;20dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginBottom</span>=<span class="hljs-string">&quot;5dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">&quot;-15dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;gif&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:textColor</span>=<span class="hljs-string">&quot;@android:color/black&quot;</span> /&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/btn3&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">&quot;5dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@drawable/link&quot;</span> /&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;50dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;20dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginBottom</span>=<span class="hljs-string">&quot;5dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">&quot;-15dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;链接&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:textColor</span>=<span class="hljs-string">&quot;@android:color/black&quot;</span> /&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/btn4&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">&quot;5dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@drawable/music&quot;</span> /&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;50dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;20dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginBottom</span>=<span class="hljs-string">&quot;5dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">&quot;-15dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;音乐&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:textColor</span>=<span class="hljs-string">&quot;@android:color/black&quot;</span> /&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/btn5&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">&quot;5dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@drawable/record&quot;</span> /&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;50dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;20dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginBottom</span>=<span class="hljs-string">&quot;5dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:layout_marginTop</span>=<span class="hljs-string">&quot;-15dp&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;录像&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:textColor</span>=<span class="hljs-string">&quot;@android:color/black&quot;</span> /&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//继承AppWidgetProvider, 实现自定义的小组件Provider</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CustomAppWidgetProvider</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppWidgetProvider</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">TAG</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;CustomAppWidgetProvider&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">BTN1_ACTION</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;com.lier.remoteview.btn1&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">BTN2_ACTION</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;com.lier.remoteview.btn2&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">BTN3_ACTION</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;com.lier.remoteview.btn3&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">BTN4_ACTION</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;com.lier.remoteview.btn4&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">BTN5_ACTION</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;com.lier.remoteview.btn5&quot;</span>;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onReceive</span><span class="hljs-params">(Context context, Intent intent)</span> &#123;<br>        <span class="hljs-built_in">super</span>.onReceive(context, intent);<br><br>        Log.i(TAG, <span class="hljs-string">&quot;onReceiver : action = &quot;</span> + intent.getAction());<br><br>        <span class="hljs-keyword">if</span> (intent.getAction() != <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">switch</span> (intent.getAction()) &#123;<br>                <span class="hljs-keyword">case</span> BTN1_ACTION:<br>                    startNewActivity(context, ModuleComeraActivity.class, R.id.btn1);<br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> BTN2_ACTION:<br>                    startNewActivity(context, ModuleGifActivity.class, R.id.btn2);<br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> BTN3_ACTION:<br>                    startNewActivity(context, ModuleLinkActivity.class, R.id.btn3);<br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> BTN4_ACTION:<br>                    startNewActivity(context, ModuleMusicActivity.class, R.id.btn4);<br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> BTN5_ACTION:<br>                    startNewActivity(context, ModuleRecordActivity.class, R.id.btn5);<br>                    <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">startNewActivity</span><span class="hljs-params">(Context context, Class&lt;?&gt; cls, <span class="hljs-type">int</span> clickId)</span> &#123;<br>        <br>        <span class="hljs-type">AppWidgetManager</span> <span class="hljs-variable">appWidgetManager</span> <span class="hljs-operator">=</span> AppWidgetManager.getInstance(context);<br>        <span class="hljs-type">RemoteViews</span> <span class="hljs-variable">remoteViews</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RemoteViews</span>(context.getPackageName(), R.layout.widget_layout);<br>        <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(context, cls);<br>        <span class="hljs-type">PendingIntent</span> <span class="hljs-variable">pendingIntent</span> <span class="hljs-operator">=</span> PendingIntent.getActivity(context, <span class="hljs-number">0</span>, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);<br>        remoteViews.setOnClickPendingIntent(clickId, pendingIntent);<br>        appWidgetManager.updateAppWidget(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ComponentName</span>(context, CustomAppWidgetProvider.class), remoteViews);<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onUpdate</span><span class="hljs-params">(Context context, AppWidgetManager appWidgetManager, <span class="hljs-type">int</span>[] appWidgetIds)</span> &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> appWidgetId : appWidgetIds) &#123;<br>            <span class="hljs-type">RemoteViews</span> <span class="hljs-variable">remoteViews</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RemoteViews</span>(context.getPackageName(), R.layout.widget_layout);<br><br>            setPendingIntent(context, remoteViews, R.id.btn1, BTN1_ACTION);<br>            setPendingIntent(context, remoteViews, R.id.btn2, BTN2_ACTION);<br>            setPendingIntent(context, remoteViews, R.id.btn3, BTN3_ACTION);<br>            setPendingIntent(context, remoteViews, R.id.btn4, BTN4_ACTION);<br>            setPendingIntent(context, remoteViews, R.id.btn5, BTN5_ACTION);<br><br>            appWidgetManager.updateAppWidget(appWidgetId, remoteViews);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setPendingIntent</span><span class="hljs-params">(Context context, RemoteViews remoteViews, <span class="hljs-type">int</span> viewId, String action)</span> &#123;<br>        <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(context, CustomAppWidgetProvider.class);<br>        intent.setAction(action);<br>        <span class="hljs-type">PendingIntent</span> <span class="hljs-variable">pendingIntent</span> <span class="hljs-operator">=</span> PendingIntent.getBroadcast(context, <span class="hljs-number">0</span>, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);<br>        remoteViews.setOnClickPendingIntent(viewId, pendingIntent);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--创建小组件配置文件(res/xml)--&gt;</span><br><br><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">appwidget-provider</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:minHeight</span>=<span class="hljs-string">&quot;56dp&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:minWidth</span>=<span class="hljs-string">&quot;272dp&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:previewImage</span>=<span class="hljs-string">&quot;@mipmap/ic_launcher&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:resizeMode</span>=<span class="hljs-string">&quot;horizontal|vertical&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:updatePeriodMillis</span>=<span class="hljs-string">&quot;100000&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:widgetCategory</span>=<span class="hljs-string">&quot;home_screen&quot;</span>&gt;</span><br><br><br>    <span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">        android:initialLayout：指定小部件的初始化布局</span><br><span class="hljs-comment">        android:minHeight：小部件最小高度</span><br><span class="hljs-comment">        android:minWidth：小部件最小宽度</span><br><span class="hljs-comment">        android:previewImage：小部件列表显示的图标</span><br><span class="hljs-comment">        android:updatePeriodMillis：小部件自动更新的周期</span><br><span class="hljs-comment">        android:widgetCategory：小部件显示的位置，home_screen表示只在桌面上显示</span><br><span class="hljs-comment">    --&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">appwidget-provider</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--AndroidManifest.xml中注册小组件--&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">receiver</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;.CustomAppWidgetProvider&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:exported</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br><br>            <span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.appwidget.provider&quot;</span></span><br><span class="hljs-tag">                <span class="hljs-attr">android:resource</span>=<span class="hljs-string">&quot;@xml/module_config&quot;</span>/&gt;</span><br><br>            <span class="hljs-tag">&lt;<span class="hljs-name">intent-filter</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.appwidget.action.APPWIDGET_UPDATE&quot;</span> /&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.lier.remoteview.btn1&quot;</span>/&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.lier.remoteview.btn2&quot;</span>/&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.lier.remoteview.btn3&quot;</span>/&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.lier.remoteview.btn4&quot;</span>/&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.lier.remoteview.btn5&quot;</span>/&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">intent-filter</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">receiver</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="D:\project\bolg\source_posts\RemoteView.assets\image-20240606103122230.png" srcset="/img/loading.gif" lazyload alt="image-20240606103122230"></p>
+<p>​		<strong>AppWidgetProvider中常用方法:</strong> </p>
+<p>​				<strong>onEnable</strong>: 小部件第一次添加到桌面时调用, 只有第一次添加时调用</p>
+<p>​				<strong>onUpdate</strong>: 小部件添加或者更新都会调用, 由配置文件的updatePeriodMillis指定更新				时间</p>
+<p>​				<strong>onDeleted</strong>: 每删除一次小部件调用一次</p>
+<p>​				<strong>onDisabled</strong>: 最后一个该类型的小部件被删除时调用, <strong>最后一个</strong></p>
+<p>​				<strong>onReceive</strong>: 分发具体事件给其他方法</p>
+<h6 id="1-3-PendingIntent"><a href="#1-3-PendingIntent" class="headerlink" title="1.3: PendingIntent"></a>1.3: PendingIntent</h6><p>​		将要发生的意图，就是在某个待定的时刻会发生, 和Intent的区别就在于一个是立即执行的一个是在未来某个时候执行</p>
+<p>​		<strong>常用方法</strong>:</p>
+<p><img src="D:\project\bolg\source_posts\RemoteView.assets\image-20240606112212505.png" srcset="/img/loading.gif" lazyload alt="image-20240606112212505"></p>
+<p>启动Activity它有两种，启动单个和启动多个，当使用getActivities时，实际上启动的是Intent数组中最后一个activity，如果要让最后一个activity返回时不退出app而是退回到上一个activity</p>
+<p>getActivity、getService、getBroadcast这三个方法的参数意义都是相同的，第一个上下文，第三个待定的意图，第二个requestCode表示PendingIntent发送方的请求码，多数情况下设置为0即可，另外requestCode会影响到第四个参数flags的效果。flags这个标志位表示执行效果。</p>
+<p>常见的flags类型有FLAG_ONE_SHOT、FLAG_NO_CREATE、FLAG_CANCEL_CURRENT、FLAG_UPDATE_CURRENT</p>
+<p>​		<strong>匹配规则</strong>:</p>
+<p>​			如果两个PendingIntent它们内部的Intent相同，且requestCode也相同，那么这两个PendingIntent就是相同的</p>
+<p>​		</p>
+<p>​		<strong>Flags说明</strong>:	</p>
+<p>​		<strong>FLAG_ONE_SHOT</strong>：</p>
+<p>​			表示当前描述的PendingIntent只能被使用一次，然后它就会自cancel, 如果后续还有相同的PendingIntent，那么它们的send方法就会调用失败。如果通知栏消息使用这种	标记位，同类型的通知就只会被打开一次，后续的通知将无法点开。</p>
+<p>​		<strong>FLAG_NO_CREATE</strong>：</p>
+<p>​			表示当前描述的PendingIntent不会主动创建，如果当前PendingIntent之前不存在, 那么getActivities等这些方法会直接返回null，获取PendingIntent失败。它无法单独使用。</p>
+<p>​		<strong>FLAG_CANCEL_CURRENT</strong>：</p>
+<p>​			表示当前描述的PendingIntent如果已经存在，就cancel它，然后系统会创建一个新的。</p>
+<p>​		<strong>FLAG_UPDATE_CURRENT</strong>：</p>
+<p>​			表示当前描述的PendingIntent如果已经存在，那么它会被更新，内部的Intent中的Extras也会被更新</p>
+<h5 id="2-内部机制"><a href="#2-内部机制" class="headerlink" title="2: 内部机制"></a>2: 内部机制</h5><p>​		</p>
+<h6 id="2-1-支持的View类型"><a href="#2-1-支持的View类型" class="headerlink" title="2.1: 支持的View类型"></a>2.1: 支持的View类型</h6><p>​			如下时RemoteView支持的View类型, 不知其子类或者自定义的View类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//Layout</span><br>FrameLayout, LinearLayout, RelativeLayout, GirdLayout<br><br><span class="hljs-comment">//View</span><br>AnalogClock, Button, Chronometer, ImageButton, ImageView, ProgressBar, TextView, ViewFlipper, ListView, GirdView, StackView, AdapterViewFlipper,<br>ViewStub<br></code></pre></td></tr></table></figure>
+
+
+
+<h6 id="2-2-源码解析"><a href="#2-2-源码解析" class="headerlink" title="2.2: 源码解析"></a>2.2: 源码解析</h6><p>​				通知栏和小组件分别是由BNotificationManager和AppWidgetManaget通过Binder和SystemServer进程中的NotificationManagerService和AppWidgetService进行通信的</p>
+<p>​				对View操作时,如setTextViewText, setsetImageViewResource等操作时, 是通过一个Action类, Action类代表这一个View操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Action</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Parcelable</span> &#123; ... &#125;<br></code></pre></td></tr></table></figure>
+
+<p>​				由此可知, Action类实现了Parcelable接口, 支持跨进程传输</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//设置</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">showDefaultNotification</span><span class="hljs-params">()</span>&#123;<br>     <span class="hljs-type">RemoteViews</span> <span class="hljs-variable">remoteviews</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RemoteViews</span>(getPackageName(), 	R.layout.remote_view);<br>     remoteviews.setTextViewText(R.id.text, <span class="hljs-string">&quot;Hello RemoteView&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​				所以调用RemoteViews的set方法(setTextViewText等)时, 系统会将View操作封装成一	个Action对象进行跨进程传输</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//NotificationManager提交更新</span><br><span class="hljs-type">NotificationManager</span> <span class="hljs-variable">notificationManager</span> <span class="hljs-operator">=</span> (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);<br><br>notificationManager.notify((<span class="hljs-type">int</span>) System.currentTimeMillis(), builder.build());<br><br><span class="hljs-comment">//AppWidgetManager提交更新</span><br>appWidgetManager.updateAppWidget(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ComponentName</span>(context, CustomAppWidgetProvider.class), remoteViews);<br></code></pre></td></tr></table></figure>
+
+<p>​			当NotificationManager, AppWidgetManager提交更新时, 这些远程的Action对象就会传	输到远程进程中,并调用RemoteView的apply方法执行View操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//RemoteViews.class</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setTextViewText</span><span class="hljs-params">(<span class="hljs-meta">@IdRes</span> <span class="hljs-type">int</span> viewId, CharSequence text)</span> &#123;<br>        setCharSequence(viewId, <span class="hljs-string">&quot;setText&quot;</span>, text);<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setCharSequence</span><span class="hljs-params">(<span class="hljs-meta">@IdRes</span> <span class="hljs-type">int</span> viewId, String methodName, CharSequence value)</span> &#123;<br>        addAction(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ReflectionAction</span>(viewId, methodName, BaseReflectionAction.CHAR_SEQUENCE,<br>                value));<br>&#125;<br><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addAction</span><span class="hljs-params">(Action a)</span> &#123;<br>        <span class="hljs-keyword">if</span> (hasMultipleLayouts()) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">&quot;RemoteViews specifying separate layouts for orientation&quot;</span><br>                    + <span class="hljs-string">&quot; or size cannot be modified. Instead, fully configure each layouts&quot;</span><br>                    + <span class="hljs-string">&quot; individually before constructing the combined layout.&quot;</span>);<br>        &#125;<br>        <span class="hljs-keyword">if</span> (mActions == <span class="hljs-literal">null</span>) &#123;<br>            mActions = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        &#125;<br>        mActions.add(a);<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>​			由上述代码可以View操作被封装成一个ReflectionAction的一些, 并被添加到一个ArrayList	集合中, <strong>由RemoteViews类内部变量mActions维护</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> View <span class="hljs-title function_">apply</span><span class="hljs-params">(Context context, ViewGroup directParent, ViewGroup rootParent,<span class="hljs-meta">@Nullable</span> SizeF size, ActionApplyParams params)</span> &#123;<br>    <span class="hljs-type">RemoteViews</span> <span class="hljs-variable">rvToApply</span> <span class="hljs-operator">=</span> getRemoteViewsToApply(context, size);<br>    <span class="hljs-type">View</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> inflateView(context, rvToApply, directParent,params.applyThemeResId, 	params.colorResources);<br>    rvToApply.performApply(result, rootParent, params);<br>    <span class="hljs-keyword">return</span> result;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​		上述时RemoteViews类的apply函数, 在inflateView方法中会加载RemoteViews的布局文件</p>
+<p>然后调用performApply方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">performApply</span><span class="hljs-params">(View v, ViewGroup parent, ActionApplyParams params)</span> &#123;<br>    params = params.clone();<br>    <span class="hljs-keyword">if</span> (params.handler == <span class="hljs-literal">null</span>) &#123;<br>        params.handler = DEFAULT_INTERACTION_HANDLER;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (mActions != <span class="hljs-literal">null</span>) &#123;<br>        <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> mActions.size();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; count; i++) &#123;<br>            mActions.get(i).apply(v, parent, params);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​		从这里就可以知道该方法最终会遍历mActions对象, <strong>执行每个Action对象的apply方法执行封装的View操作</strong></p>
+<p>​		而apply方法只有在初始化界面的时候调用, 后续更新都会调用reapply方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">reapply</span><span class="hljs-params">(Context context, View v, ViewGroup rootParent,</span><br><span class="hljs-params">            <span class="hljs-meta">@Nullable</span> SizeF size, ActionApplyParams params, <span class="hljs-type">boolean</span> topLevel)</span> &#123;<br>    <span class="hljs-type">RemoteViews</span> <span class="hljs-variable">rvToApply</span> <span class="hljs-operator">=</span> getRemoteViewsToReapply(context, v, size);<br>    rvToApply.performApply(v, rootParent, params);<br><br>    <span class="hljs-keyword">if</span> (topLevel &amp;&amp; v <span class="hljs-keyword">instanceof</span> ViewGroup) &#123;<br>        finalizeViewRecycling((ViewGroup) v);<br>    &#125;<br>&#125;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">* 由代码可知, reapply函数只调用performApply方法去遍历mActions集合执行View操作</span><br><span class="hljs-comment">* 更新View, 并没有初始化布局</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p><img src="D:\project\bolg\source_posts\RemoteView.assets\image-20240606142536537.png" srcset="/img/loading.gif" lazyload alt="image-20240606142536537"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/06/07/Android%E5%8A%A8%E7%94%BB%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/05/20/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Android%20View/">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <i class="iconfont icon-love"></i>lier 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
